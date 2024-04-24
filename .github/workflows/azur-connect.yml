@@ -45,10 +45,10 @@ jobs:
     - name: Find and Replace
       uses: jacobtomlinson/gha-find-replace@v2
       with:
-        find: "password.registry"
-        replace: ${{ secrets.AZURE_REGISTRY_SECRET }}
-        regex: false
-        include: 'deploy-aci.yaml'
+          find: "password.registry"
+          replace: "${{ secrets.AZURE_REGISTRY_SECRET }}"
+          regex: false
+          include: 'deploy-aci.yaml'
     
     - name: Azure CLI script
       uses: azure/CLI@v1
