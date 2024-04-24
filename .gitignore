@@ -5,3 +5,4 @@ __pycache__
 *.pdf
 *.jpg
 *.PNG
+__init__.py

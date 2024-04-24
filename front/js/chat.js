@@ -38,3 +38,42 @@ document.getElementById("chat-form").addEventListener("submit", async function(e
         chatMessages.innerHTML += errorMessage;
     }
 });
+
+document.getElementById("feedback-button").addEventListener("click", async function(event) {
+    event.preventDefault();
+
+    const lastUserMessage = document.querySelector(".user-message:last-child").textContent;
+    const lastAssistantMessage = document.querySelector(".bot-message:last-child").textContent;
+
+    try {
+        console.log('Envoi du feedback à FastAPI...');
+        const response = await fetch('http://127.0.0.1:8008/feedback', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ 
+                "comment": "Votre commentaire ici",
+                "question": lastUserMessage,
+                "response": lastAssistantMessage
+            })
+        });
+        console.log('Réponse de FastAPI reçue:', response);
+
+        if (!response.ok) {
+            throw new Error('Request failed');
+        }
+
+        const feedbackSuccessMessage = document.createElement("div");
+        feedbackSuccessMessage.textContent = "Feedback envoyé avec succès !";
+        feedbackSuccessMessage.style.color = "green";
+        document.body.appendChild(feedbackSuccessMessage);
+
+    } catch (error) {
+        console.error('Erreur:', error);
+        const feedbackErrorMessage = document.createElement("div");
+        feedbackErrorMessage.textContent = "Une erreur s'est produite lors de l'envoi du feedback. Veuillez réessayer.";
+        feedbackErrorMessage.style.color = "red";
+        document.body.appendChild(feedbackErrorMessage);
+    }
+});

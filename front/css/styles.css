@@ -117,22 +117,17 @@ section{
     align-items: center;   
     grid-template-columns: 50% 1fr; 
     background-image: url(/img/abstract-267046_1920.png);
-   
-        
 }
 .home-text h1{
     font-size: var(--big-font);
     font-weight: 800;
     line-height: 1.1;
     margin: 10px 0px 25px;  
-    
-    
 }
 .home-text h5{
     margin-bottom: 23px;
     font-size: 19px;
     font-weight: 600;
-    
 }
 span{
     color: var(--main-color);    
@@ -255,7 +250,6 @@ header.sticky{
     margin: 8px 0px 25px;
     line-height: 1.1;
     text-align: center;
-    
 }
 
 .about-text h3{
@@ -407,28 +401,91 @@ header.sticky{
     font-size: var(--big-font);
     margin-bottom: 20px;
 }
-/* Styles CSS pour le chat box */
 .chat-container {
     border: 3px solid #000000;
     border-radius: 20px;
     max-width: 400px;
+    width: 300px;
+    height: 400px;
     margin: 20px auto;
     padding: 20px;
     position: fixed;
     right: 10px;
     bottom: 10px;
     background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; 
 }
+
+.chat-messages {
+    overflow-y: auto;
+    width: 100%;
+    flex: 1; 
+}
+
+#chat-form {
+    margin-top: auto; 
+}
+
+#user-input {
+    border-radius: 5px;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    padding-top: 5px;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+.button-group {
+    display: flex;
+    margin-left: 10px;
+}
+
+.submit {
+    background-color: #9900b8;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s;
+}
+.submit:hover {
+    background-color: #888;
+}
+
+div#chat-messages::-webkit-scrollbar {
+    width: 12px;
+}
+
+div#chat-messages::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+div#chat-messages::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
 .message {
     background-color: #f0f0f0;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
 }
+.error-message {
+    color: red; 
+}
 
 .user-message {
-    text-align: right;
-    
+    text-align: right;    
 }
 
 .bot-message {
@@ -451,7 +508,6 @@ div#chat-messages {
     margin: 20px auto;
     padding: 20px;
     border: 3px solid #000000;
-    
 }
 
 .chat-msg{
@@ -463,10 +519,18 @@ div#chat-messages {
     background-color: lightblue;
     text-align: left;
     border: 3px solid #000000;
-    
 }
-
-
+.message.user-message,.message.bot-message{
+    margin: 5px;
+}
+.message.user-message{
+    background-color: #8e8e8e;
+    color: white;
+}
+.message.bot-message{
+    background-color: #9900b8;
+    color: white;
+}
 
 @media (max-width: 1425px){
     header{

@@ -1,18 +1,15 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from bs4 import BeautifulSoup
 import re
 from typing import List
-from fastapi.middleware.cors import CORSMiddleware
-
 from openai import AzureOpenAI
-from config import CONFIG
+from back.config import CONFIG
 import os
 
 app = FastAPI()
-
-api_key = CONFIG.AZURE_OPENAI_KEY
 
 app.add_middleware(
     CORSMiddleware,
@@ -21,6 +18,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+api_key = CONFIG.AZURE_OPENAI_KEY
 
 if not api_key:
     raise Exception("API key not found")
@@ -34,7 +33,7 @@ client = AzureOpenAI(
 class Message(BaseModel):
     sender: str
     message: str
-
+    
 class ChatRequest(BaseModel):
     system: str = f"you are an assistant who helps answer questions in my portfolio "
     history: List[Message]
@@ -52,21 +51,19 @@ def extract_text_from_html(html_content):
 
 @app.post("/generate-text")
 async def generate_text(request: ChatRequest):
-    root_dir = os.path.dirname(__file__)
-    front_dir = os.path.abspath(os.path.join('front'))
-    with open(os.path.join(front_dir, 'index.html'), 'r', encoding='utf-8') as f:
-        html_content = f.read()
-    
-    text_from_html = str(extract_text_from_html(html_content))
-    print(text_from_html)
-    history_with_html = [Message(sender="user", message=text_from_html)] 
-    history_with_html.extend(request.history)
-
-    message_text = [
-        {"role": "user", "content": msg.message} for msg in history_with_html
-    ]
-
     try:
+        front_dir = os.path.abspath(os.path.join('front'))
+        with open(os.path.join(front_dir, 'index.html'), 'r', encoding='utf-8') as f:
+            html_content = f.read()
+        
+        text_from_html = str(extract_text_from_html(html_content))
+        history_with_html = [Message(sender="user", message=text_from_html)] 
+        history_with_html.extend(request.history)
+
+        message_text = [
+            {"role": "user", "content": msg.message} for msg in history_with_html
+        ]
+
         completion = client.chat.completions.create(
             model="gpt35-latest",
             messages=message_text,

@@ -2,7 +2,9 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY ../front /app
+COPY . .
+
+# COPY ../front /app
 
 EXPOSE 8011
 

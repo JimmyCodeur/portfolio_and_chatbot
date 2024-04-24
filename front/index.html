@@ -6,19 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
-    
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;700;900&family=Mulish:wght@400;767;900&family=Playfair+Display:ital@1&family=Poppins:wght@400;600;700&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    
     <!-----------------header------------->
     <header>
         <div class="logo"> Portfolio<b>.</b></div>
         <div class="bx bx-menu" id="menu-icon"></div>
-
         <ul class="navlist">
             <li><a href="#home-text">Accueil</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -51,16 +48,13 @@
             <h2>Skills<b>.</b></h2>
         </div>
         <div class="items">
-            
             <div class="sub-box">
                 <div class="sub-img">
                     <img src="img/html.png">
                 </div>
                 <h3>HTML</h3>
                 <p>Je possède de solide connaissances en HTML, la langue de balisage standard utilisée pour créer des pages Web. <br><br>J'ai une connaissance approfondie des différents éléments HTML, tels que les balises, les attributs et les formulaires, ainsi que de la structure de base d'une page HTML.<br>
-
                    Je suis capable de créer des pages Web bien structurées, faciles à lire et à naviguer pour les utilisateurs
-                    
                  <br><br> Je suis constamment à la recherche de nouvelles façons d'utiliser HTML pour créer des pages Web interactives et dynamiques.</p>
             </div>
         
@@ -70,9 +64,6 @@
             </div>
             <h3>CSS</h3>
             <p>Je pratiques régulièrement le CSS, la langue de style utilisée pour définir l'apparence et la mise en page des pages Web. <br><br>J'ai une connaissance approfondie des différents sélecteurs CSS, propriétés et valeurs, ainsi que des méthodes de positionnement et de mise en page.<br><br>
-
-               
-                
                 Très à l'aise avec les dernières versions de CSS. Quotidiennement à la recherche de nouvelles façons d'utiliser CSS pour créer des pages Web élégantes et modernes.</p>
         </div>
         <div class="sub-box">
@@ -129,25 +120,20 @@
         <div class="about-text">
             <h2>Biographie<b>.</b></h2>
             <h3>Mon parcours vers developpeur web</h3>
-            
             <p>Je suis un développeur autodidacte en web passionné par la création de sites web et d'applications en ligne.<br><br>
                  J'ai appris de manière autonome les différentes technologies web pour créer des projets innovants et créatifs.                
                 J'ai une petite expérience en développement web.<br><br>
                  Je suis compétent dans plusieurs langages de programmation, tels que HTML, CSS, JavaScript. <br><br>
                  J'ai pour objectif d'apprendre divers frameworks et bibliothèques tels que React,Vue.js et Node.js. <br><br>                
                 Je suis constamment à la recherche de nouveaux défis et de nouvelles opportunités pour améliorer mes compétences et mes connaissances dans le domaine du développement web. <br><br> Si vous êtes à la recherche d'un développeur autodidacte talentueux pour votre prochain projet, n'hésitez pas à me contacter pour en savoir plus sur mes compétences et mes réalisations.</p>
-            
         </div>  
         <div class="about-text">
-            
             <h3>8 ans d'expertise en entreprise</h3>
-            
             <p>Il y a huit ans, j'ai commencé à travailler dans une entreprise informatique en tant que technicien en exploitation informatique. <br><br> 
                 Depuis lors, j'ai acquis une solide expérience dans ce domaine, en travaillant avec diverses technologies et en gérant des systèmes informatiques complexes.<br><br> 
                  J'ai appris à résoudre des problèmes techniques, à assurer le bon fonctionnement des systèmes et à répondre aux besoins des clients en matière de support informatique. <br><br> 
                  Le travail d'équipe me plait énormement car j'ai été ammené à réaliser des projets au sein de l'entreprise comme migration de serveur, mise en place de poste utilisateur, automatisation de tâches informatiques, etc..<br><br>
                  Je suis fier de mon parcours professionnel et j'ai hâte de me professionaliser vers le domaine du developpement web.</p>
-            
         </div>
         <div class="about-img">
             <img src="img/monitor-1307227_1920.jpg" >
@@ -171,26 +157,27 @@
             </div>            
         </div>        
     </section>
-
-    
-
    </button>
     
-   
-<!-----------------Chatbot------------>
-<div class="chat-container" id="chat-container">
-    <h1 class="title_bot">JomB0t</h1>
-    <div id="chat-messages">
+    <!-----------------Chatbot------------>
+    <div class="chat-container" id="chat-container">
+        <h1 class="title_bot">JimB0t</h1>
+        <div id="chat-messages"></div>
+        <form id="chat-form">
+            <div class="input-group">
+                <input type="text" id="user-input" placeholder="  Une question ?">
+                <div class="button-group">
+                    <button class="submit" type="submit">Go!</button>
+                    <!-- <button id="feedback-button">Feedback</button> -->
+                </div>
+            </div>
+        </form>
     </div>
-    <form id="chat-form">
-        <input type="text" id="user-input" placeholder="Insert your text">
-        <button type="submit">Send</button>
-    </form>
-</div>
 
-
-<!-- Assurez-vous d'inclure vos scripts JavaScript ici -->
-<script src="js/scripts.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/chat.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
     
     <!-----------------contact------------>
     <!--<section class="contact" id="contact">
@@ -207,15 +194,5 @@
             </div>
         </div>
     </section>
-    
-    <script src="https://unpkg.com/scrollreveal"></script>
-   
-
-    <!-----------------Link to JS------------->
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/chat.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    
-
 </body>
 </html>
