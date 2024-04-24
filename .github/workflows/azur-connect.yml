@@ -22,7 +22,7 @@ jobs:
       run: |
         docker build -t chatbotjim.azurecr.io/chatbotback:latest .
         docker build -t chatbotjim.azurecr.io/chatbotfront:latest front/
-        echo ${{ secrets.REGISTRY_PASSWORD }} | docker login chatbotjim.azurecr.io -u chatbotjim --password-stdin
+        echo ${{ secrets.REGISTRY_PASSWORD }} | docker login chatbotjim.azurecr.io -u chatbotjim -p fmSPP9xbDR8kK3sUO/dIRwuCO+eym1HBSbuc476W/b+ACRBVDrie
         docker push chatbotjim.azurecr.io/chatbotback:latest
         docker push chatbotjim.azurecr.io/chatbotfront:latest
 
