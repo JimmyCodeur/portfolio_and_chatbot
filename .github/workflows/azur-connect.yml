@@ -20,8 +20,8 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        docker build -t chatbotjim.azurecr.io/chatbotback:latest path/to/backend
-        docker build -t chatbotjim.azurecr.io/chatbotfront:latest path/to/frontend
+        docker build -t chatbotjim.azurecr.io/chatbotback:latest .
+        docker build -t chatbotjim.azurecr.io/chatbotfront:latest front/
         docker login chatbotjim.azurecr.io -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }}
         docker push chatbotjim.azurecr.io/chatbotback:latest
         docker push chatbotjim.azurecr.io/chatbotfront:latest
