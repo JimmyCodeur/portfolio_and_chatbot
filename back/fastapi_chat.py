@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 import re
 from typing import List
 from openai import AzureOpenAI
-from back.config import CONFIG
 import os
 import sys
 
@@ -22,7 +21,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-api_key = CONFIG.AZURE_OPENAI_KEY
+api_key = os.environ.get("AZURE_OPENAI_KEY")
+#api_key = CONFIG.AZURE_OPENAI_KEY
 
 if not api_key:
     raise Exception("API key not found")

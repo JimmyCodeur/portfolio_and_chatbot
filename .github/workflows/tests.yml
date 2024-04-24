@@ -26,5 +26,6 @@ jobs:
 
     - name: Run tests
       env:
-        DB_URI: ${{ secrets.TEST_SECRET }}
+        AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+        BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
       run: pytest tests/tests_unit.py
