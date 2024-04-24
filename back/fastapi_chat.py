@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import re
 from typing import List
 from openai import AzureOpenAI
-from back.config import CONFIG
+from config import CONFIG
 import os
 import sys
 
