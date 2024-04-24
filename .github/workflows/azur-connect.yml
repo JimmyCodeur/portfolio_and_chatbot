@@ -22,7 +22,7 @@ jobs:
       run: |
         docker build -t chatbotjim.azurecr.io/chatbotback:latest .
         docker build -t chatbotjim.azurecr.io/chatbotfront:latest front/
-        docker login chatbotjim.azurecr.io -u chatbotjim -p fmSPP9xbDR8kK3sUO/dIRwuCO+eym1HBSbuc476W/b+ACRBVDrie
+        echo ${{ secrets.REGISTRY_PASSWORD }} | docker login chatbotjim.azurecr.io -u chatbotjim --password-stdin
         docker push chatbotjim.azurecr.io/chatbotback:latest
         docker push chatbotjim.azurecr.io/chatbotfront:latest
 
@@ -35,8 +35,6 @@ jobs:
           --cpu 1 \
           --memory 1.5 \
           --ports 8008 \
-          --registry-username chatbotjim \
-          --registry-password password.registry \
           --dns-name-label chatbotjim \
           --ip-address Public
 
@@ -47,7 +45,5 @@ jobs:
           --cpu 1 \
           --memory 1.5 \
           --ports 8011 \
-          --registry-username chatbotjim \
-          --registry-password password.registry \
           --dns-name-label chatbotjim-front \
           --ip-address Public
