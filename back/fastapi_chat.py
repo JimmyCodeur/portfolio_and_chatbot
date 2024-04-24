@@ -22,7 +22,7 @@ app.add_middleware(
 )
 
 api_key = os.environ.get("AZURE_OPENAI_KEY")
-#api_key = CONFIG.AZURE_OPENAI_KEY
+#apii_key = CONFIG.AZURE_OPENAI_KEY
 
 if not api_key:
     raise Exception("API key not founds")
