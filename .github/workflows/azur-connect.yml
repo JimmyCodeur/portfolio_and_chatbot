@@ -46,7 +46,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@v2
       with:
           find: "password.registry"
-          replace: "${{ secrets.AZURE_REGISTRY_SECRET }}"
+          replace: "${{ secrets.REGISTRY_PASSWORD }}"
           regex: false
           include: 'deploy-aci.yaml'
     
