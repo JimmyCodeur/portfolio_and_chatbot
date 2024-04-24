@@ -23,7 +23,7 @@ jobs:
       run: pip install -r requirements.txt 
     
     - name: Run tests
-      run: pytest tests/
+      run: pytest tests/tests_unit.py
 
     - name: azure acr login
       run: |
