@@ -9,7 +9,7 @@ properties:
   containers:
     - name: backend
       properties:
-        image: chatbotjim.azurecr.io/chatbotback:latest
+        image: chatbotjim.azurecr.io/chatbotback
         ports:
           - port: 8008
         resources:
@@ -18,7 +18,7 @@ properties:
             memoryInGb: 1.5
     - name: frontend
       properties:
-        image: chatbotjim.azurecr.io/chatbotfront:latest
+        image: chatbotjim.azurecr.io/chatbotfront
         ports:
           - port: 8011
         resources:
