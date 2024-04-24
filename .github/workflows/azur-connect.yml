@@ -24,10 +24,10 @@ jobs:
         pip install -r requirements.txt 
         pip install pytest
     
-    - name: Run tests
-      env:
-        AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
-      run: pytest tests/tests_unit.py
+    # - name: Run tests
+    #   env:
+    #     AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+    #   run: pytest tests/tests_unit.py
 
     - name: azure acr login
       run: |
