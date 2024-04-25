@@ -9,10 +9,6 @@ from openai import AzureOpenAI
 import os
 import sys
 
-
-from back.config import AZURE_OPENAI_KEY
-
-
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 app = FastAPI()
@@ -25,8 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-api_key = AZURE_OPENAI_KEY
-
+api_key = os.getenv("AZURE_OPENAI_KEY")
 
 
 client = AzureOpenAI(

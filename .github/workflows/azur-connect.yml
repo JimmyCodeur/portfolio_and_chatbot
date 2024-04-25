@@ -14,13 +14,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     
-    - name: Find and Replace API_KEY in bearer_key.py
-      uses: jacobtomlinson/gha-find-replace@v2
-      with:
-        find: "passwordazurekey"
-        replace: ${{ secrets.AZURE_OPENAI_KEY }}
-        regex: true
-        include: 'back/config.py'
+    # - name: Find and Replace API_KEY in bearer_key.py
+    #   uses: jacobtomlinson/gha-find-replace@v2
+    #   with:
+    #     find: "passwordazurekey"
+    #     replace:
+    #     regex: true
+    #     include: 'back/config.py'
 
     
     # - name: Set up Python
@@ -45,7 +45,7 @@ jobs:
 
     - name: build and push images
       run: |
-        docker build -t chatbotback:latest -f Dockerfile .
+        docker build --build-arg AZURE_OPENAI_KEY=${{ secrets.AZURE_OPENAI_KEY }} -t chatbotback:latest -f Dockerfile .
         docker build -t chatbotfront:latest -f front/Dockerfile front/
         docker tag chatbotback:latest chatbotjim.azurecr.io/chatbotback:latest
         docker tag chatbotfront:latest chatbotjim.azurecr.io/chatbotfront:latest

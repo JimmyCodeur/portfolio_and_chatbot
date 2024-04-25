@@ -1,9 +1,9 @@
 *.pyc
 config.py
 __pycache__
-*.png
-*.pdf
-*.jpg
-*.PNG
+# *.png
+# *.pdf
+# *.jpg
+# *.PNG
 __init__.py
 tests.yml
