@@ -46,7 +46,7 @@ jobs:
     - name: build and push images
       run: |
         docker build -t chatbotback:latest -f Dockerfile .
-        docker build -t chatbotfront:latest -f front/Dockerfile .
+        docker build -t chatbotfront:latest -f front/Dockerfile front/
         docker tag chatbotback:latest chatbotjim.azurecr.io/chatbotback:latest
         docker tag chatbotfront:latest chatbotjim.azurecr.io/chatbotfront:latest
         docker push chatbotjim.azurecr.io/chatbotback:latest
