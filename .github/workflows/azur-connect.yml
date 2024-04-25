@@ -55,4 +55,5 @@ jobs:
       with:
         azcliversion: latest
         inlineScript: |
+          az container delete --name chatbotjim --resource-group ajax_jim --yes
           az container create --resource-group ajax_jim --file deploy-aci.yaml
