@@ -38,8 +38,8 @@ jobs:
       run: |
         docker build -t chatbotback:latest -f Dockerfile .
         docker build -t chatbotfront:latest -f Dockerfile front/
-        docker tag chatbotfront:latest chatbotjim.azurecr.io/chatbotfront:v1
-        docker tag chatbotback:latest chatbotjim.azurecr.io/chatbotback:v2
+        docker tag chatbotfront:latest chatbotjim.azurecr.io/chatbotfront:lastest
+        docker tag chatbotback:latest chatbotjim.azurecr.io/chatbotback:lastest
         docker push chatbotjim.azurecr.io/chatbotback:latest
         docker push chatbotjim.azurecr.io/chatbotfront:latest
     
