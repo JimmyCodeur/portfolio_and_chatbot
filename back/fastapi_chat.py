@@ -8,8 +8,10 @@ from typing import List
 from openai import AzureOpenAI
 import os
 import sys
-# from back.config import CONFIG
-##
+
+
+from back.config import AZURE_OPENAI_KEY
+
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -23,11 +25,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-api_key = os.environ.get("AZURE_OPENAI_KEY")
-# api_key = CONFIG.AZURE_OPENAI_KEY
+api_key = AZURE_OPENAI_KEY
 
-if not api_key:
-    raise Exception("API key not founds")
+
 
 client = AzureOpenAI(
     azure_endpoint="https://openai-lok.openai.azure.com/",
