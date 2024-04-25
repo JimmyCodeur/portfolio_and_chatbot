@@ -28,6 +28,7 @@ jobs:
     #   env:
     #     AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
     #   run: pytest tests/tests_unit.py
+    #
 
     - name: azure acr login
       run: |
@@ -37,8 +38,8 @@ jobs:
       run: |
         docker build -t chatbotback:latest -f Dockerfile .
         docker build -t chatbotfront:latest -f Dockerfile front/
-        docker tag chatbotfront:latest chatbotjim.azurecr.io/chatbotfront:latest
-        docker tag chatbotback:latest chatbotjim.azurecr.io/chatbotback:latest
+        docker tag chatbotfront:latest chatbotjim.azurecr.io/chatbotfront:v1
+        docker tag chatbotback:latest chatbotjim.azurecr.io/chatbotback:v2
         docker push chatbotjim.azurecr.io/chatbotback:latest
         docker push chatbotjim.azurecr.io/chatbotfront:latest
     
