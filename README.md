@@ -1,6 +1,10 @@
 # Portfolio_and_Chatbot
 Ce projet est une application web déployée sur Microsoft Azure qui combine un portfolio personnel avec un chatbot intégré. Le chatbot est conçu pour répondre aux questions des utilisateurs en fonction des informations contenues dans le portfolio.
 
+## Capture d'écran de l'interface utilisateur
+
+![Capture d'écran de l'interface utilisateur](front/img/screen_demo.png)
+
 ## Fonctionnalités
 Portfolio personnel : Mes réalisations, projets, compétences et expériences professionnelles.
 
