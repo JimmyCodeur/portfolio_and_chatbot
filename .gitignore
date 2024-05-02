@@ -7,3 +7,4 @@ __pycache__
 # *.PNG
 __init__.py
 tests.yml
+.pytest_cache
