@@ -10,13 +10,14 @@ Ce projet utilise Azure DevOps pour la livraison continue (CI/CD).
 
 ## Utilisation 
 Pour faire fonctionner le code, il vaut remplacer vos 3 clef avec Azure : 
-`AZURE_CREDENTIALS
-REGISTRY_PASSWORD
-AZURE_OPENAI_KEY`
+`AZURE_CREDENTIALS`
+`REGISTRY_PASSWORD`
+`AZURE_OPENAI_KEY`
 
 ## Arborescence du projet 
 
-`Portfolio_and_Chatbot/
+```bash
+Portfolio_and_Chatbot/      
 │
 ├── .github/
 │   └── workflows/
@@ -39,5 +40,5 @@ AZURE_OPENAI_KEY`
 ├── Dockerfile
 ├── README.md
 └── requirements.txt
-`
+```
 
