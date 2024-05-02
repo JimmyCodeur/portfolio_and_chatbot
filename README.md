@@ -3,16 +3,17 @@ Ce projet est une application web déployée sur Microsoft Azure qui combine un 
 
 ## Fonctionnalités
 Portfolio personnel : Mes réalisations, projets, compétences et expériences professionnelles.
+
 Chatbot intégré : Posez des questions sur le contenu du portfolio et obtenez des réponses pertinentes en temps réel.
 
 ## Déploiement
-Ce projet utilise Azure DevOps pour la livraison continue (CI/CD). 
+Pour exécuter le code, assurez-vous de remplacer les valeurs des clés Azure dans le fichier de configuration approprié. Suivez les instructions dans le fichier `azur-connect.yml` pour configurer le pipeline CI/CD et déployer l'application sur Azure. 
 
 ## Utilisation 
 Pour faire fonctionner le code, il vaut remplacer vos 3 clef avec Azure : 
-`AZURE_CREDENTIALS`
-`REGISTRY_PASSWORD`
-`AZURE_OPENAI_KEY`
+`AZURE_CREDENTIALS` : les informations d'identification pour la connexion à Azure.
+`REGISTRY_PASSWORD` : le mot de passe requis pour accéder à votre registre Azure Container.
+`AZURE_OPENAI_KEY` : la clé d'API OpenAI utilisée pour le chatbot.
 
 ## Arborescence du projet 
 
