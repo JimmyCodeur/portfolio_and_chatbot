@@ -5,6 +5,10 @@ Ce projet est une application web déployée sur Microsoft Azure qui combine un 
 
 ![Capture d'écran de l'interface utilisateur](./front/img/Screen_demo.PNG)
 
+## Différentes branches
+- `main` : Projet à lancer sur Azure.
+- `localhost` : Projet à lancer en localhost. Pour lancer le projet en local, il faut lancer la commande pour le front `python3 -m http.server 8011` et lancer le fichier `fastapi_chat` pour le back avec le lancement de l'IA.
+
 ## Fonctionnalités
 Portfolio personnel : Mes réalisations, projets, compétences et expériences professionnelles.
 
@@ -15,11 +19,11 @@ Pour exécuter le code, assurez-vous de remplacer les valeurs des clés Azure da
 
 ## Utilisation 
 Pour faire fonctionner le code, il vaut remplacer vos 3 clef avec Azure : 
-`AZURE_CREDENTIALS` : les informations d'identification pour la connexion à Azure.
-`REGISTRY_PASSWORD` : le mot de passe requis pour accéder à votre registre Azure Container.
-`AZURE_OPENAI_KEY` : la clé d'API OpenAI utilisée pour le chatbot.
+- `AZURE_CREDENTIALS` : les informations d'identification pour la connexion à Azure.
+- `REGISTRY_PASSWORD` : le mot de passe requis pour accéder à votre registre Azure Container.
+- `AZURE_OPENAI_KEY` : la clé d'API OpenAI utilisée pour le chatbot.
 
-## Arborescence du projet 
+## Arborescence du projet avec Azure
 
 ```bash
 Portfolio_and_Chatbot/      
