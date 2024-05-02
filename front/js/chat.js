@@ -11,7 +11,7 @@ document.getElementById("chat-form").addEventListener("submit", async function(e
 
     try {
         console.log('Envoi de la requête à FastAPI...');
-        const response = await fetch('http://chatbotjim.francecentral.azurecontainer.io:8008/generate-text', {
+        const response = await fetch('http://localhost:8008/generate-text', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -47,7 +47,7 @@ document.getElementById("feedback-button").addEventListener("click", async funct
 
     try {
         console.log('Envoi du feedback à FastAPI...');
-        const response = await fetch('http://chatbotjim.francecentral.azurecontainer.io:8008/feedback', {
+        const response = await fetch('http://localhost:8008/feedback', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

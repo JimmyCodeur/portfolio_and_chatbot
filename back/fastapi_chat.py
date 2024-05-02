@@ -8,6 +8,7 @@ from typing import List
 from openai import AzureOpenAI
 import os
 import sys
+from config import AZURE_OPENAI_KEY
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -21,12 +22,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-api_key = os.getenv("AZURE_OPENAI_KEY")
 
 
 client = AzureOpenAI(
     azure_endpoint="https://openai-lok.openai.azure.com/",
-    api_key=api_key,
+    api_key=AZURE_OPENAI_KEY,
     api_version="2024-02-15-preview"
 )
 
@@ -97,4 +97,4 @@ async def generate_text(request: ChatRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, port=8000)
+    uvicorn.run(app, port=8008)
