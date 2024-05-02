@@ -3,7 +3,7 @@ Ce projet est une application web déployée sur Microsoft Azure qui combine un 
 
 ## Capture d'écran de l'interface utilisateur
 
-![Capture d'écran de l'interface utilisateur](front/img/screen_demo.png)
+![Capture d'écran de l'interface utilisateur](./front/img/Screen_demo.PNG)
 
 ## Fonctionnalités
 Portfolio personnel : Mes réalisations, projets, compétences et expériences professionnelles.
