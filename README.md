@@ -1,28 +1,28 @@
 # Portfolio_and_Chatbot
-Ce projet est une application web déployée sur Microsoft Azure qui combine un portfolio personnel avec un chatbot intégré. Le chatbot est conçu pour répondre aux questions des utilisateurs en fonction des informations contenues dans le portfolio.
+This project is a web application deployed on Microsoft Azure that combines a personal portfolio with an integrated chatbot. The chatbot is designed to answer user questions based on the information contained in the portfolio.
 
-## Capture d'écran de l'interface utilisateur
+## User Interface Screenshot
 
-![Capture d'écran de l'interface utilisateur](./front/img/Screen_demo.PNG)
+![User Interface Screenshot](./front/img/Screen_demo.PNG)
 
-## Fonctionnalités
-Portfolio personnel : Mes réalisations, projets, compétences et expériences professionnelles.
+## Features
+Personal Portfolio: My achievements, projects, skills, and professional experience.
 
-Chatbot intégré : Posez des questions sur le contenu du portfolio et obtenez des réponses pertinentes en temps réel.
+Integrated Chatbot: Ask questions about the portfolio content and get relevant real-time responses.
 
-## Branche `main`- Projet sur Azure
-Pour faire fonctionner le code, il vaut remplacer vos 3 clef avec Azure : 
-- `AZURE_CREDENTIALS` : les informations d'identification pour la connexion à Azure.
-- `REGISTRY_PASSWORD` : le mot de passe requis pour accéder à votre registre Azure Container.
-- `AZURE_OPENAI_KEY` : la clé d'API OpenAI utilisée pour le chatbot.
+## `main Branch` - Azure Project
+To run the code, you need to replace your three keys with Azure credentials:
+- `AZURE_CREDENTIALS` : Credentials for connecting to Azure.
+- `REGISTRY_PASSWORD` : The password required to access your Azure Container Registry.
+- `AZURE_OPENAI_KEY`: The OpenAI API key used for the chatbot.
 
-### Déploiement
-Pour exécuter le code, assurez-vous de remplacer les valeurs des clés Azure dans le fichier de configuration approprié. Suivez les instructions dans le fichier `azur-connect.yml` pour configurer le pipeline CI/CD et déployer l'application sur Azure. 
+### Deployment
+To run the code, make sure to replace the Azure key values in the appropriate configuration file. Follow the instructions in the `azur-connect.yml` file to configure the CI/CD pipeline and deploy the application on Azure.
 
-## Branche `localhost`- Projet en localhost
-Pour lancer le projet en local, il faut lancer la commande pour le front `python3 -m http.server 8011` et lancer le fichier `fastapi_chat` pour le back avec le lancement de l'IA.
+## `localhost` Branch - Localhost Project
+To run the project locally, start the front end with the command `python3 -m http.server 8011` and run the `fastapi_chat` file for the back end, which will launch the AI.
 
-# Arborescence du projet avec Azure
+# Project Structure with Azure
 
 ```bash
 Portfolio_and_Chatbot/      
